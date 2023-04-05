@@ -1,0 +1,45 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/general_prefs_title">
+
+        <SwitchPreferenceCompat
+            android:key="display_sleep"
+            android:summaryOff="@string/display_sleep_sum_off"
+            android:summaryOn="@string/display_sleep_sum_on"
+            android:title="@string/display_sleep" />
+
+        <SwitchPreferenceCompat
+            android:key="display_dark"
+            android:title="@string/display_dark" />
+
+        <ListPreference
+            app:defaultValue="mmoll"
+            app:entries="@array/bg_units"
+            app:entryValues="@array/bg_units_vals"
+            app:key="units"
+            app:title="@string/bg_units"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/dexcom_pref_title">
+
+    <SwitchPreferenceCompat
+        android:key="dexcom_enable"
+        android:summary="@string/dexcom_summary"
+        android:title="@string/dexcom_enable_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/nightscout_pref_title">
+        <SwitchPreferenceCompat
+            android:key="nightscout_enable"
+            android:title="@string/nightscout_enable" />
+
+        <EditTextPreference
+            android:dependency="nightscout_enable"
+            android:key="nightscout_url"
+            android:title="@string/nightscout_url" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
